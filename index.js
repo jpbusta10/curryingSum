@@ -6,4 +6,4 @@ function sum(num1){
             return num1;
         }
 }
-console.log(sum(2));
+console.log(sum(2)(3)(4));
