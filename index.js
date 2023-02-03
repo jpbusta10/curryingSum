@@ -1,9 +1,13 @@
-function sum(num1){
-        return function( num2){
-            if(num2){
-                return sum(num1+num2);
-            }
-            return num1;
-        }
-}
-console.log(sum(2)(3)(4));
+function sum(num1) {
+    var v = function(num2) {
+      return sum(num1 + num2);
+    };
+  
+    v.valueOf = v.toString = function() {
+      return num1;
+    };
+  
+    return v;
+  }
+  
+  console.log(+sum(1)(2)(3)(4));
